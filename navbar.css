@@ -1,0 +1,183 @@
+@import url(./styles.css);
+/* -------------------------------------Desktop Navigation----------------------------------- */
+#desktop-nav { display: none; }
+/* -------------------------------------Mobile Navigation-------------------------------- */
+.close-icon, .hamburger-icon {
+  width: calc(3rem + 1dvw);
+}
+.hamburger-menu {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.mobile-nav-toggle {
+  border: 0;
+  position: relative;
+  background-color: transparent;
+}
+.close-icon { display: none; }
+.close-icon.open {
+  display: block;
+  z-index: 12;
+  position: relative;
+}
+.hamburger-icon.open { display: none; }
+.menu-links {
+  display: none;
+  right: 0;
+  top: 0;
+  margin: 0;
+  z-index: 10;
+  position: fixed;
+  inset: 0 0 0 30%;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  justify-content: center;
+  /* justify-content: start; */
+  /* padding-top: 8rem; */
+  background-color: hsl(var(--dark) / .04);
+  background-color: hsl(var(--white) / .04);
+  transform: translateX(150%);
+  transition: all 0.3s ease-in-out;
+}
+.menu-links.open {
+  min-height: 100%;
+  transform: translate(0);
+}
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .menu-links.open {
+    -webkit-backdrop-filter: blur(1rem);
+    backdrop-filter: blur(1rem);
+  }
+} 
+.menu-links > li {
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+  text-transform: uppercase;
+  border: .2rem solid transparent;
+}
+.menu-links a span { font-weight: 600; }
+.menu-links a {
+  width: 100%;
+  margin: 1rem;
+  display: block;
+  font-size: 2rem;
+  font-weight: 100;
+  letter-spacing: 4.725px;
+  color: hsl(var(--white));
+  font-family: var(--ff-barlowCondensed);
+  font-weight: 100;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;  
+}
+.menu-links > .active,
+.menu-links > [aria-selected="true"] {
+  border-left: 0.2rem solid hsl(var(--white));
+}
+.menu-links > *:hover,
+.menu-links > *:focus {
+  border-left: 0.2rem solid hsl(var(--white) / 0.5);
+}
+.mobile-nav-toggle:hover { cursor: pointer; }
+.line { display: none; }
+
+@media (min-width: 768px) {
+  .hamburger-nav { display: none; }
+  #desktop-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;    
+  }
+  .brand img {
+    cursor: pointer;
+    padding: 2rem;
+    max-width: 100%;
+  }
+  .primary-navigation {
+    width: 100%;
+    z-index: 1;
+    padding: 2rem 2rem 0;
+    cursor: pointer;
+    list-style: none;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2rem);
+    display: flex;
+    justify-content: end;
+    justify-content: space-evenly;
+    gap: 2rem;
+  }
+  .primary-navigation li a {
+    gap: .5rem;
+    display: flex;
+    text-decoration: none;
+    font-size: 2rem;
+    background-color: transparent;
+    font-weight: 100;
+    letter-spacing: 4.725px;
+    color: hsl(var(--white));
+    font-family: var(--ff-barlowCondensed);
+  }
+  .primary-navigation li a span {
+    display: inline-block;
+    font-weight: 500;
+  }
+  .primary-navigation li:nth-child(1) a span {
+    display: none;
+  }
+  .underline-indicators li a {
+    border: 0;
+    padding: 0.5rem 0;  
+  }
+  .underline-indicators > .active,
+  .underline-indicators > [aria-selected="true"] {
+    padding-bottom: 2rem;
+    border-bottom: 0.2rem solid hsl(var(--white));
+  }
+  .underline-indicators > *:hover,
+  .underline-indicators > *:focus {
+    padding-bottom: 2rem;
+    border-bottom: 0.2rem solid hsl(var(--white) / 0.5);
+  }
+}
+
+@media(min-width:1024px) {
+  #desktop-nav {
+    margin: 2rem 0 0 4rem; 
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }  
+  .primary-navigation li:nth-child(1) a span {
+    display: inline-block;
+  }
+  .brand {
+    width: 20%;
+    min-width: 9rem;
+  }
+  .line {
+    z-index: -1;
+    display: inline-block;
+    margin-left: 4rem;
+    margin-right: -2rem;
+    width: 100%;
+    background-color: hsl(var(--white) / 0.4);
+    height: .1rem;
+  }
+  .primary-navigation {
+    width: 100%;
+    justify-content: center;
+  }
+  .primary-navigation li a {
+    font-size: 2.5rem;
+  }
+  .primary-navigation li a span {
+    display: inline-block;
+  }  
+}

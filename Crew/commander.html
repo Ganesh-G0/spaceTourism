@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">  
+  <link rel="stylesheet" href="crew.css">
+  <title>Space Tourism | Crew</title>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="../navigation.js"></script>
+  <script defer src="switch.js"></script>
+</head>
+<body class="crew">
+  <header>
+    <nav id="desktop-nav" class="nav-text">
+      <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+      <div class="line"></div>
+      <ul class="primary-navigation underline-indicators">
+        <li><a href="../index.html" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+        <li><a href="../Destination/moon.html" class="uppercase text-white letter-spacing-2" ><span>01</span> Destination</a></li>
+        <li class="active"><a href="commander.html" class="uppercase text-white letter-spacing-2"><span>02</span> Crew</a></li>
+        <li><a href="../Technology/vehicle.html" class="uppercase text-white letter-spacing-2" ><span>03</span> Technology</a></li>
+      </ul>
+    </nav>
+    <nav class="hamburger-nav nav-text">
+      <div class="hamburger-menu">
+        <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+        <div>
+          <button class="mobile-nav-toggle" onclick="toggleMenu()">
+            <img class="close-icon" src="../assets/icon-close.svg" alt="close icon">
+            <img class="hamburger-icon" src="../assets/icon-hamburger.svg" alt="hamburger close icon">
+          </button>
+          <ul class="menu-links">
+              <li><a href="../index.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+              <li><a href="../Destination/moon.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>01</span> Destination</a></li>
+              <li class="active"><a href="commander.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>02</span> Crew</a></li>
+              <li><a href="../Technology/vehicle.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>03</span> Technology</a></li>
+          </ul>    
+        </div>
+      </div>
+    </nav>  
+  </header>
+  <main>    
+    <h1 class="numbered-title"><span>02</span> Meet your crew</h1>
+    <div class="grid-crew">      
+      <div class="img-div"><img id="img" src="./assets/image-douglas-hurley.webp" alt="douglas hurley"></div>
+      <div class="dot-indicators">
+        <button id="commander" value="0" class="active"></button>
+        <button id="specialist" value="1"></button>
+        <button id="pilot" value="2"></button>
+        <button id="engineer" value="3"></button>
+      </div>
+      <div class="text-area">
+        <h1 class="role">Commander</h1>
+        <h2 class="name">Douglas Hurley</h2>
+        <p class="bio">  
+          Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+          and former NASA astronaut. He launched into space for the third time as 
+          commander of Crew Dragon Demo-2.
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

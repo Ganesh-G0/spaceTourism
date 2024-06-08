@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="stylesheet" href="vehicle.css">
+  <title>Space Tourism | Vehicle</title>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="../navigation.js"></script>
+  <script defer src="switchVehicle.js"></script>
+</head>
+<body class="vehicle">
+  <header>
+    <nav id="desktop-nav" class="nav-text">
+      <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+      <div class="line"></div>
+      <ul class="primary-navigation underline-indicators">
+        <li><a href="../index.html" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+        <li><a href="../Destination/moon.html" class="uppercase text-white letter-spacing-2" ><span>01</span> Destination</a></li>
+        <li><a href="../Crew/commander.html" class="uppercase text-white letter-spacing-2" ><span>02</span> Crew</a></li>
+        <li class="active"><a href="vehicle.html" class="uppercase text-white letter-spacing-2"><span>03</span> Technology</a></li>
+      </ul>
+    </nav>
+    <nav class="hamburger-nav nav-text">
+      <div class="hamburger-menu">
+        <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+        <div>
+          <button class="mobile-nav-toggle" onclick="toggleMenu()">
+            <img class="close-icon" src="../assets/icon-close.svg" alt="close icon">
+            <img class="hamburger-icon" src="../assets/icon-hamburger.svg" alt="hamburger close icon">
+          </button>
+            <ul class="menu-links">
+              <li><a href="../index.html"  onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+              <li><a href="../Destination/moon.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>01</span> Destination</a></li>
+              <li><a href="../Crew/commander.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>02</span> Crew</a></li>
+              <li class="active"><a href="vehicle.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>03</span> Technology</a></li>
+            </ul>    
+        </div>
+      </div>
+    </nav>  
+  </header>
+  <main>
+    <h1 class="numbered-title"><span>03 </span>Space launch 101</h1>
+    <div class="grid-technology">
+      <div class="img-div">
+        <img class="img mobile-img" src="./assets/image-launch-vehicle-landscape.jpg" alt="Image">
+        <img class="img desktop-img" src="./assets/image-launch-vehicle-portrait.jpg" alt="Image">        
+      </div>
+      <div class="rounded-buttons" >
+        <button value="0" id="one" class="active">1</button>
+        <button value="1" id="two">2</button>
+        <button value="2" id="three">3</button>
+      </div>
+      <div class="text-area">
+        <h1>The terminology...</h1>
+        <h2 class="name">Launch vehicle</h2>
+        <p class="description">
+          A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
+          payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
+          WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, 
+          it's quite an awe-inspiring sight on the launch pad!
+        </p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

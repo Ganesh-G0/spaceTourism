@@ -1,0 +1,240 @@
+@import url(../navbar.css);
+@import url(../styles.css);
+/* ----------------------------------------------------------Home--------------------------------------------- */
+.moon {
+  /* mix-blend-mode: screen; */
+  /* mix-blend-mode: luminosity; */
+  color: hsl(var(--white));
+  background: whitesmoke url(./assets/background-destination-mobile.jpg) no-repeat 0px 0px / 100% 100%;  
+}
+/* ------------------------------------Numbered title------------------------------------ */
+.numbered-title {
+  font-weight: 300;
+  font-size: 1.8rem;
+  letter-spacing: 4.72px;
+  text-transform: uppercase;
+  font-family: var(--ff-barlowCondensed);
+}
+.numbered-title span {
+  font-weight: 700;
+  margin-right: .5em;
+  color: hsl( var(--white) / .5 );
+}
+/* ------------------------------------Main------------------------------------ */
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 4rem;
+}
+.grid-destination {
+  width: 100%;
+  margin: 0 auto 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  display: grid;
+  gap: 4rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: start;
+}
+.grid-destination > img { 
+    /*
+    max-width: 17rem;
+    max-height: 17rem;    
+    */
+  max-width: 25rem;
+  max-height: 25rem;    
+  margin: auto;
+}
+/* ------------------------------------Tab List------------------------------------ */
+.tab-list {
+  display: flex;
+  gap: 1rem;
+}
+.tab-list button {
+  cursor: pointer;
+  text-transform: uppercase;
+  color: hsl( var(--accent) / .8);
+  background-color: transparent;    
+  font-family: var(--ff-barlowCondensed);    
+  font-size: 2rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  letter-spacing: 2.7px;
+  border: 0;
+  border-bottom: 0.2rem solid transparent;
+}
+.tab-list > .active {
+  padding-bottom: 1rem;
+  color: hsl(var(--white));
+  border-bottom: 0.2rem solid hsl(var(--white) / 0.5);
+}
+.tab-list *:hover,
+.tab-list *:focus {
+  padding-bottom: 1rem;
+  color: hsl(var(--white));
+  border-bottom: 0.2rem solid hsl(var(--white));
+}
+/* --------------------------------------------------TextArea------------- */
+.text-area {
+  margin: auto;
+  align-items: center;
+}
+.title {
+  font-weight: 100;
+  font-size: 6rem;
+  font-family: var(--ff-belleFair);
+}
+.subtitle {
+  font-size: 2rem;
+  max-width: 32.7rem;
+  font-weight: 100;
+  text-transform: none;
+  color: hsl(var(--accent) / .9);
+  line-height: 2.5rem;
+  font-family: var(--ff-barlowCondensed);
+}
+.line-between {
+  content: "";
+  width: 100%;
+  height: .1px;
+  background-color: hsl( var(--accent) / .2 );
+}
+/* -------------------------------------Distance Travel div---------------------- */
+.travel-div, .distance-div {
+  gap: 1rem;
+  font-family: var(--ff-barlowCondensed);
+}
+.travel-div p, .distance-div p {
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+}
+.travel-div > p:first-child, 
+.distance-div > p:first-child {
+  font-size: 2rem;
+  color: hsl(var(--accent));
+}
+.travel-div > p:last-child, 
+.distance-div > p:last-child {
+  font-size: 3rem;
+  color: hsl( var(--white));
+  font-family: var(--ff-belleFair);
+}
+@media (min-width: 768px) {
+  .moon {
+    background-image: url(./assets/background-destination-tablet.jpg);
+  }
+  .primary-navigation li:nth-child(1) a span {
+    display: inline-block;
+  }
+  main {
+    align-items: start;
+    margin: 3rem auto 0;
+    width: 100%;
+    gap: 0;
+  }
+  .grid-destination {
+    margin: 4rem auto;
+  }
+  .grid-destination > img {
+    /* max-width: 30rem;         */
+    max-width: 35rem;        
+    max-height: 35rem;        
+  }
+  .numbered-title {
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    text-align: left;
+  }
+  .tab-list button {
+    font-size: 2.5rem;
+  }
+  .text-area {
+    width: 100%;
+    margin: auto;
+    max-width: 50rem;
+  }
+  .title {
+    font-size: 9rem;
+  }
+  .subtitle {
+    max-width: 55ch;
+  }
+  .distance-time-div {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around; 
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .moon {
+    background-image: url(./assets/background-destination-desktop.jpg);
+  }
+  main{
+    gap: 12rem;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1240px;
+    height: fit-content;
+    justify-content: space-between;
+  }
+  .grid-destination {
+    gap: 5rem;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-areas: "img txt";
+    justify-content: space-between;
+    align-items: center;
+  }
+  .grid-destination > img {
+    grid-area: img;
+    margin: auto;
+    max-width: 44.5rem;        
+    max-height: 44.5rem;       
+  }
+  .grid-destination > .text-area {
+    grid-area: txt;
+    width: 100%;
+    height: 100%;
+    align-items: start;
+    text-align: left;
+    gap: 4rem;
+  }
+  .numbered-title {
+    font-size: 3rem;
+  }
+  .tab-list button {
+    font-size: 3rem;
+  }
+  .title {
+    font-size: 9rem;
+    max-width: 100%;
+  }
+  .subtitle {
+    line-height: 4rem;
+    font-size: 2.7rem;
+  }
+  .distance-time-div {
+    justify-content: start;
+    gap: 8rem;
+  }
+}
+
+/* --------------------------------------------------Planets spin animation */
+.spin {
+    animation: spin 30s infinite linear;
+}
+@keyframes spin {
+    0%   {transform: rotate(0deg);}  
+    100% {transform: rotate(360deg);}
+}  

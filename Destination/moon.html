@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <title>Space Tourism | Destination</title>
+  <link rel="stylesheet" href="moon.css">  
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script defer src="../navigation.js"></script>
+  <script defer src="switchContent.js"></script>
+</head>
+<body class="moon">
+  <header>
+    <nav id="desktop-nav" class="nav-text">
+      <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+      <div class="line"></div>
+      <ul class="primary-navigation underline-indicators">
+        <li><a href="../index.html" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+        <li class="active"><a href="moon.html" class="uppercase text-white letter-spacing-2"><span>01</span> Destination</a></li>
+        <li><a href="../Crew/commander.html" class="uppercase text-white letter-spacing-2" ><span>02</span> Crew</a></li>
+        <li><a href="../Technology/vehicle.html" class="uppercase text-white letter-spacing-2" ><span>03</span> Technology</a></li>
+      </ul>
+    </nav>
+    <nav class="hamburger-nav nav-text">
+      <div class="hamburger-menu">
+        <div class="brand"><a href="../index.html"><img src="../assets/logo.svg" alt="logo"></a></div>
+        <div>
+          <button class="mobile-nav-toggle" onclick="toggleMenu()">
+            <img class="close-icon" src="../assets/icon-close.svg" alt="close icon">
+            <img class="hamburger-icon" src="../assets/icon-hamburger.svg" alt="hamburger close icon">
+          </button>
+          <ul class="menu-links">
+              <li><a href="../index.html"  onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>00</span> Home</a></li>
+              <li class="active"><a href="moon.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>01</span> Destination</a></li>
+              <li><a href="../Crew/commander.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>02</span> Crew</a></li>
+              <li><a href="../Technology/vehicle.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2" ><span>03</span> Technology</a></li>
+          </ul>    
+        </div>
+      </div>
+    </nav>  
+  </header>
+  <main>
+    <h1 class="numbered-title"><span>01</span> Pick your destination</h1>
+    <div class="grid-destination">
+      <img id="Img" src="./assets/image-moon.webp" alt="Moon" class="spin">    
+      <div class="text-area flex-col">
+        <div class="tab-list underline-indicators">
+          <button id="moon" value="0" class="active uppercase letter-spacing-2">Moon</button>
+          <button id="mars" value="1" class="uppercase letter-spacing-2">Mars</button>
+          <button id="europa" value="2" class="uppercase letter-spacing-2">Europa</button>
+          <button id="titan" value="3" class="uppercase letter-spacing-2">Titan</button>
+        </div>
+        <div class="flex-col">
+          <h1 id="name" class="title">Moon</h1>
+          <p id="description" class="subtitle">     
+            See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+            regain perspective and come back refreshed. While you’re there, take in some history 
+            by visiting the Luna 2 and Apollo 11 landing sites.
+          </p>              
+        </div>
+        <div class="line-between"></div>
+        <div class="distance-time-div flex-col">
+          <div class="distance-div flex-col">
+            <p>Avg. distance</p>      
+            <p id="distance">384,400 km</p>
+          </div>
+          <div class="travel-div flex-col">
+            <p>Est. travel time</p>     
+            <p id="travel">3 days</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

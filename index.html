@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">  
+  <title>Space Tourism | Home</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script defer src="navigation.js"></script>
+</head>
+<body class="home">
+  <header>
+    <nav id="desktop-nav" class="nav-text">
+      <div class="brand"><a href="../index.html"><img src="./assets/logo.svg" alt="logo"></a></div>
+      <div class="line"></div>
+      <ul class="primary-navigation underline-indicators">
+        <li class="active"><a href="./index.html" class="uppercase text-white letter-spacing-2"><span>00</span> Home</a></li>
+        <li><a href="./Destination/moon.html" class="uppercase text-white letter-spacing-2"><span>01</span> Destination</a></li>
+        <li><a href="./Crew/commander.html" class="uppercase text-white letter-spacing-2"><span>02</span> Crew</a></li>
+        <li><a href="./Technology/vehicle.html" class="uppercase text-white letter-spacing-2"><span>03</span> Technology</a></li>
+      </ul>
+    </nav>
+    <nav class="hamburger-nav nav-text">
+      <div class="hamburger-menu">
+        <div class="brand"><a href="../index.html"><img src="./assets/logo.svg" alt="logo"></a></div>
+        <div>
+          <button class="mobile-nav-toggle" onclick="toggleMenu()">
+            <img class="close-icon" src="./assets/icon-close.svg" alt="close icon">
+            <img class="hamburger-icon" src="./assets/icon-hamburger.svg" alt="hamburger close icon">
+          </button>
+          <ul class="menu-links">
+            <li class="active"><a href="./index.html"  onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>00</span> Home</a></li>
+            <li><a href="./Destination/moon.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>01</span> Destination</a></li>
+            <li><a href="./Crew/commander.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>02</span> Crew</a></li>
+            <li><a href="./Technology/vehicle.html" onclick="toggleMenu()" class="uppercase text-white letter-spacing-2"><span>03</span> Technology</a></li>
+          </ul>    
+        </div>
+      </div>
+    </nav>  
+  </header> 
+  <main id="main" class="grid-container grid-container--home">   
+    <div class="text-area">
+      <h1>So, you want to travel to</h1> 
+      <h2>space</h2>
+      <p>
+        Let’s face it; if you want to go to space, you might as well genuinely go to 
+        outer space and not hover kind of on the edge of it. Well sit back, and relax 
+        because we’ll give you a truly out of this world experience!
+      </p>
+    </div>
+    <div class="exp">
+      <a href="./Destination/moon.html" class="large-button">Explore</a>      
+    </div>    
+  </main>
+</body>
+</html>

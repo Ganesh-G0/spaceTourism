@@ -1,6 +1,24 @@
 @import url(../navbar.css);
 @import url(../styles.css);
 @import url(../Destination/moon.css);
+:root {
+  --ff-barlow : "Barlow", sans-serif;
+  --ff-belleFair : "Bellefair", serif;
+  --ff-barlowCondensed : "Barlow Condensed", sans-serif;      
+
+  --white : 0 0% 100%;
+  --dark : 230 35% 7%;
+  --accent : 231 77% 90%;
+
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+}
 /* ----------------------------------------------------------Home--------------------------------------------- */
 .crew {
   /* mix-blend-mode: screen; */
@@ -10,23 +28,25 @@
 }
 /* ------------------------------------Container------------------------------------ */
 main {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  gap: 5rem;
+  gap: 4rem;
+  height: fit-content;
 }
 .grid-crew {
-  gap: 2rem;
   width: 100%;
-  height: 100%;
   text-align: center;
   display: grid;
-  align-items: center;
-  grid-template-columns: 1fr;
-  grid-template-areas: "txt" "dots" "img";
-  justify-content: space-between;
-  gap: 8rem;
+  grid-template-areas: 
+  "txt"
+  "dots"
+  "img"
+  ;
+  gap: 4rem;
 }
 .grid-crew > .img-div {
   grid-area: img;
@@ -39,15 +59,13 @@ main {
 }
 /* ----------------------------------------------img */
 .grid-crew > .img-div {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
-  /* border-bottom: 1px solid hsl(var(--white) / .5); */
 }
 .img-div > img {
-  max-width: 100%;
-  max-height: 35rem;
+  max-height: 30rem;
+  max-height: calc(40dvh + 1dvw);
+  border-bottom: 1px solid hsl(var(--accent) / .5);
 }
 /* ---------------------dot indicators------------------------------- */
 .dot-indicators button {
@@ -56,68 +74,56 @@ main {
   aspect-ratio: 1/1;
   border-radius: 50%;
   border: 0;
-  margin: 1em;
+  margin: 1rem;
   background-color: hsl(var(--white) / 0.1);
 }
 .dot-indicators .active {
   background-color: hsl(var(--white));
 }
-.dot-indicators button:hover,
-.dot-indicators button:focus {
-  background-color: hsl(var(--white) / 0.5);
+@media(hover:hover) {
+  .dot-indicators button:hover {
+    background-color: hsl(var(--white) / 0.5);
+  }
+}
+@media(hover:none) {
+  .dot-indicators button:active {
+    background-color: hsl(var(--white) / 0.5);
+  }
 }
 /* -------------------------------------------------------------text area */
+.text-area {
+  gap: 1rem;
+}
 .text-area > h1 {
-  font-size: 2rem;
+  font-size: calc(2rem + .5dvw);
   color: hsl(var(--white) / 0.5);
   font-family: var(--ff-belleFair);
 }
 .text-area > h2 {
-  font-size: 2.5rem;
-  font-size: 2.8rem;
+  font-size: calc(2.5rem + 1.4dvw);
   font-weight: 100;
   color: hsl(var(--white));
   font-family: var(--ff-belleFair);
 }
 .text-area > p {
-  color: hsl(var(--accent));
-  font-size: 1.8rem;
+  max-width: 38ch;
+  font-size: calc(1.5rem + .1dvw);
+  line-height: 2.5rem;
+  font-weight: 400;
   text-wrap: pretty;
-  max-width: 42ch;
+  color: hsl(var(--accent));
 }
 /* -----------------------------------------------------------------------------------Media Queries */
 @media (min-width: 768px) {
   .crew {
-    background-color: white;
     background-image: url(./assets/background-crew-tablet.jpg);
   }
   main {
-    width: 95%;
-    margin: 8rem auto 0;
     align-items: start;
     gap: 5rem;
   }
-  .grid-crew {
-    gap: 2rem;
-    align-items: start;
-    justify-content: start;
-  }
-  .img-div > img {
+  .text-area > p {
     max-width: 100%;
-    max-height: 42rem;
-  }
-  .text-area {
-    max-width: 100%;
-  }
-  .text-area > h1 {
-    font-size: 3rem;
-  }
-  .text-area h2 {
-    font-size: 4.5rem;
-  }
-  .text-area p {
-    font-size: 2rem;
-    max-width: 90%;
   }
 }
 @media (min-width: 1024px) {
@@ -128,40 +134,26 @@ main {
     margin: 0;
   }
   main {
-    margin: 2rem auto;
-    max-width: 1240px;
+    width: 90%;
+    max-width: 1200px;   
+    align-items: start;
+    justify-content: center;
+    height: 100%;
   }
   .grid-crew {
-    gap: 5rem;
-    grid-template-columns: 1.5fr 1fr;
+    gap: 0rem;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "txt img" "dots img";
-    justify-content: start;
-    text-align: start;
+    justify-content: end;
     align-items: end;
-  }
-  .grid-crew > .img-div {
-    border-bottom: 1px solid hsl(var(--accent) / .5);
-    height: 60dvh;
+    text-align: start;
   }
   .img-div > img {
     max-height: 100%;
+    max-height: 60dvh;
   }
   .text-area {
+    margin: 0;
     align-items: start;
-    text-align: start;
-  }
-  .text-area h1 {
-    font-size: 3.5rem;
-  }
-  .text-area h2 {
-    font-size: 5rem;
-  }
-  .text-area p {
-    line-height: 4rem;
-    font-size: 2.5rem;
-    max-width: 55ch;
-  }
-  .dot-indicators button {
-    padding: 1.5rem;
   }
 }

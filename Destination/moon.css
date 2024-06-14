@@ -1,11 +1,24 @@
 @import url(../navbar.css);
 @import url(../styles.css);
+:root {
+  --ff-barlow: "Barlow", sans-serif;
+  --ff-belleFair: "Bellefair", serif;
+  --ff-barlowCondensed: "Barlow Condensed", sans-serif;
+  --white: 0 0% 100%;
+  --dark: 230 35% 7%;
+  --accent: 231 77% 90%;
+  --ls-4: 4.75px;
+  --ls-3: 2.7px;
+  --ls-2: 2.35px;
+  --ls-1: 2px;
+}
 /* ----------------------------------------------------------Home--------------------------------------------- */
 .moon {
   /* mix-blend-mode: screen; */
   /* mix-blend-mode: luminosity; */
   color: hsl(var(--white));
-  background: whitesmoke url(./assets/background-destination-mobile.jpg) no-repeat 0px 0px / 100% 100%;  
+  background: whitesmoke url(./assets/background-destination-mobile.jpg)
+    no-repeat 0px 0px / 100% 100%;
 }
 /* ------------------------------------Numbered title------------------------------------ */
 .numbered-title {
@@ -17,41 +30,41 @@
 }
 .numbered-title span {
   font-weight: 700;
-  margin-right: .5em;
-  color: hsl( var(--white) / .5 );
+  margin-right: 0.5em;
+  color: hsl(var(--white) / 0.5);
 }
 /* ------------------------------------Main------------------------------------ */
-.flex-col {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
 main {
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: center;
   align-items: center;
   gap: 4rem;
 }
 .grid-destination {
-  width: 100%;
-  margin: 0 auto 2rem;
+  margin: 0 auto 4rem;
   text-align: center;
   text-transform: uppercase;
   display: grid;
-  gap: 4rem;
   grid-template-columns: 1fr;
+  grid-template-areas: "img" "txt";
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+  gap: 4rem;
 }
-.grid-destination > img { 
-    /*
-    max-width: 17rem;
-    max-height: 17rem;    
-    */
-  max-width: 25rem;
-  max-height: 25rem;    
+.grid-destination > img { grid-area: img; }
+.grid-destination > div { grid-area: txt; }
+.grid-destination > img {  
+  max-width: calc(25rem + 1dvw);
+  max-height: calc(25rem + 1dvw);
   margin: auto;
+}
+.grid-destination > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 /* ------------------------------------Tab List------------------------------------ */
 .tab-list {
@@ -61,9 +74,9 @@ main {
 .tab-list button {
   cursor: pointer;
   text-transform: uppercase;
-  color: hsl( var(--accent) / .8);
-  background-color: transparent;    
-  font-family: var(--ff-barlowCondensed);    
+  color: hsl(var(--accent) / 0.8);
+  background-color: transparent;
+  font-family: var(--ff-barlowCondensed);
   font-size: 2rem;
   font-weight: 400;
   padding-bottom: 1rem;
@@ -76,55 +89,78 @@ main {
   color: hsl(var(--white));
   border-bottom: 0.2rem solid hsl(var(--white) / 0.5);
 }
-.tab-list *:hover,
-.tab-list *:focus {
-  padding-bottom: 1rem;
-  color: hsl(var(--white));
-  border-bottom: 0.2rem solid hsl(var(--white));
+@media(hover:hover){
+  .tab-list *:hover  {
+    padding-bottom: 1rem;
+    color: hsl(var(--white));
+    border-bottom: 0.2rem solid hsl(var(--white));
+  }
+}
+@media(hover:none){
+  .tab-list *:active  {
+    padding-bottom: 1rem;
+    color: hsl(var(--white));
+    border-bottom: 0.2rem solid hsl(var(--white));
+  }
 }
 /* --------------------------------------------------TextArea------------- */
 .text-area {
-  margin: auto;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
-.title {
+.text-area > .title {
   font-weight: 100;
-  font-size: 6rem;
+  font-size: calc(6rem + 1dvw);
   font-family: var(--ff-belleFair);
 }
-.subtitle {
-  font-size: 2rem;
-  max-width: 32.7rem;
+.text-area > .subtitle {
+  font-size: calc(2rem + .5dvw);
+  max-width: 38ch;
   font-weight: 100;
   text-transform: none;
-  color: hsl(var(--accent) / .9);
-  line-height: 2.5rem;
+  text-wrap: pretty;
+  color: hsl(var(--accent));
+  line-height: 3rem;
   font-family: var(--ff-barlowCondensed);
 }
 .line-between {
   content: "";
   width: 100%;
-  height: .1px;
-  background-color: hsl( var(--accent) / .2 );
+  height: 0.1px;
+  background-color: hsl(var(--accent) / 0.2);
 }
 /* -------------------------------------Distance Travel div---------------------- */
-.travel-div, .distance-div {
+.distance-time-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.travel-div,
+.distance-div {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
   font-family: var(--ff-barlowCondensed);
 }
-.travel-div p, .distance-div p {
-  letter-spacing: .3rem;
+.travel-div p,
+.distance-div p {
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
-.travel-div > p:first-child, 
+.travel-div > p:first-child,
 .distance-div > p:first-child {
-  font-size: 2rem;
+  font-size: calc(2rem + .2dvw);
   color: hsl(var(--accent));
 }
-.travel-div > p:last-child, 
+.travel-div > p:last-child,
 .distance-div > p:last-child {
-  font-size: 3rem;
-  color: hsl( var(--white));
+  font-size: calc(3rem + .5dvw);
+  color: hsl(var(--white));
   font-family: var(--ff-belleFair);
 }
 @media (min-width: 768px) {
@@ -144,33 +180,36 @@ main {
     margin: 4rem auto;
   }
   .grid-destination > img {
-    /* max-width: 30rem;         */
-    max-width: 35rem;        
-    max-height: 35rem;        
+    max-width: 35rem;
+    max-height: 35rem;
   }
   .numbered-title {
-    font-size: 2.5rem;
+    font-size: calc(2.5rem + .5dvw);
     margin-left: 2rem;
     text-align: left;
   }
   .tab-list button {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    font-size: calc(2rem + .5dvw);
   }
   .text-area {
     width: 100%;
     margin: auto;
-    max-width: 50rem;
+    max-width: 80%;
   }
-  .title {
-    font-size: 9rem;
+  .text-area > div {    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .subtitle {
-    max-width: 55ch;
+  .text-area > .subtitle {
+    max-width: 100%;
   }
   .distance-time-div {
     width: 100%;
     flex-direction: row;
-    justify-content: space-around; 
+    justify-content: space-around;
     gap: 2rem;
   }
 }
@@ -179,62 +218,59 @@ main {
   .moon {
     background-image: url(./assets/background-destination-desktop.jpg);
   }
-  main{
-    gap: 12rem;
-    width: 80%;
-    margin: 0 auto;
-    max-width: 1240px;
-    height: fit-content;
-    justify-content: space-between;
+  main {
+    gap: 6rem;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto 4rem;
+    justify-content: center;
   }
   .grid-destination {
-    gap: 5rem;
+    gap: 0rem;
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: "img txt";
     justify-content: space-between;
     align-items: center;
   }
   .grid-destination > img {
-    grid-area: img;
-    margin: auto;
-    max-width: 44.5rem;        
-    max-height: 44.5rem;       
+    max-width: 44.5rem;
+    max-height: 44.5rem;
   }
-  .grid-destination > .text-area {
-    grid-area: txt;
+  .grid-destination > div {
     width: 100%;
     height: 100%;
+    max-height: 100%;
+    max-width: 100%;
     align-items: start;
     text-align: left;
     gap: 4rem;
   }
-  .numbered-title {
-    font-size: 3rem;
-  }
-  .tab-list button {
-    font-size: 3rem;
-  }
-  .title {
-    font-size: 9rem;
+  .text-area {
     max-width: 100%;
+    text-align: left;
+    align-items: start;
   }
   .subtitle {
+    max-width: 100%;
     line-height: 4rem;
-    font-size: 2.7rem;
   }
   .distance-time-div {
     justify-content: start;
-    gap: 8rem;
+    gap: 4rem;
   }
 }
 
 /* --------------------------------------------------Planets spin animation */
 .spin {
-    animation: spin 30s infinite linear;
+  animation: spin 30s infinite linear;
 }
 @keyframes spin {
-    0%   {transform: rotate(0deg);}  
-    100% {transform: rotate(360deg);}
-}  
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

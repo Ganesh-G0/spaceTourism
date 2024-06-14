@@ -29,8 +29,8 @@ $(document).ready(() => {
       if (tech === "One") {  tech = response.data.technology[0]; }
       else if (tech === "Two") { tech = response.data.technology[1]; }
       else if (tech === "Three") { tech = response.data.technology[2]; }
-      $(".mobile-img").attr("src", tech.images.landscape);
-      $(".desktop-img").attr("src", tech.images.portrait);
+      $(".mobile-img").attr("src", tech.images.portrait);
+      $(".desktop-img").attr("src", tech.images.landscape);
       $(".name").text(tech.name);
       $(".description").text(tech.description);
     } catch (error) {
